@@ -1,0 +1,9 @@
+<%= link_to('Home', {controller: 'main', action: 'index'}) %><br />
+
+<h1>Tasks#index</h1>
+
+<ul>
+<% @tasks.each do |task| %>
+  <li><%= task %></li>
+<% end %>
+</ul>

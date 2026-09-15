@@ -1,0 +1,16 @@
+<h1>Update Book</h1>
+
+<%= form_with model: @book do |f| %>
+
+  <div>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div><br />
+
+  <div>
+    <%= f.submit "Update Book" %>
+  </div>
+
+<% end %>
+
+<p><%= link_to "Back to Home", root_path %></p>
