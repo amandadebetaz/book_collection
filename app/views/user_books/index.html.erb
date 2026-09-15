@@ -1,0 +1,35 @@
+<h1>User Books</h1>
+
+<% if notice %>
+	<p><%= notice %></p>
+<% end %>
+
+<p>
+	<%= link_to "New User Book", new_user_book_path %> |
+	<%= link_to "Book Index", books_path %> |
+	<%= link_to "User Index", users_path %>
+</p>
+
+<table>
+	<thead>
+		<tr>
+			<th>User</th>
+			<th>Book</th>
+			<th>Actions</th>
+		</tr>
+	</thead>
+
+	<tbody>
+		<% @user_books.each do |user_book| %>
+			<tr>
+				<td><%= user_book.user.username %></td>
+				<td><%= user_book.book.title %></td>
+				<td>
+					<%= link_to "Show", user_book_path(user_book) %>
+					<%= link_to "Edit", edit_user_book_path(user_book) %>
+					<%= link_to "Delete", user_book_path(user_book), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+				</td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
