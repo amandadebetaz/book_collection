@@ -14,6 +14,7 @@ class BooksController < ApplicationController
     if @book.save
       redirect_to root_path, notice: "Book was successfully created."
     else
+      flash.now[:alert] = "Book title cannot be blank."
       render :new
     end
   end
@@ -48,6 +49,6 @@ class BooksController < ApplicationController
   end
 
   def book_params
-    params.require(:book).permit(:title)
+    params.require(:book).permit(:title, :author, :price, :published_date)
   end
 end
