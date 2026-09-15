@@ -2,14 +2,29 @@
 
 <%= form_with model: @book do |f| %>
 
-  <div>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </div><br />
+    <div>
+        <%= f.label :title %>
+        <%= f.text_field :title %>
+    </div><br />
 
-  <div>
-    <%= f.submit "Update Book" %>
-  </div>
+    <div>
+        <%= f.label :author %>
+        <%= f.text_field :author %>
+    </div>
+
+    <div>
+        <%= f.label :price %>
+        <%= f.number_field :price, step: 0.01 %>
+    </div>
+
+    <div>
+        <%= f.label :published_date %>
+        <%= f.date_select :published_date %>
+    </div>
+
+    <div>
+        <%= f.submit "Update Book" %>
+    </div>
 
 <% end %>
 
